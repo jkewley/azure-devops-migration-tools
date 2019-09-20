@@ -31,7 +31,7 @@
       "uri": "https://dev.azure.com/nkdagility/migration-tools/"
     },
     "getstarted": {
-      "uri": "https://dev.azure.com/nkdagility/migration-tools/_wiki/wikis/VSTS-Sync-Migrator-Docs?pagePath=%2Fgetting%20started"
+      "uri": "https://github.com/nkdAgility/azure-devops-migration-tools"
     },
     "learn": {
       "uri": "https://dev.azure.com/nkdagility/migration-tools/_wiki/wikis/VSTS-Sync-Migrator-Docs?pagePath=%2Findex"
