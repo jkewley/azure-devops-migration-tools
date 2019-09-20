@@ -555,15 +555,22 @@ namespace VstsSyncMigrator.Engine
                         {
                             targetUserId = targetIdentity.TeamFoundationId;
                         }
+                        try
+                        {
+                            // Create a test point assignment with target test case id, target configuration (id and name) and target identity
+                            var newAssignment = targetSuite.CreateTestPointAssignment(
+                                targetTc.Id,
+                                targetConfiguration,
+                                targetUserId);
 
-                        // Create a test point assignment with target test case id, target configuration (id and name) and target identity
-                        var newAssignment = targetSuite.CreateTestPointAssignment(
-                            targetTc.Id,
-                            targetConfiguration,
-                            targetUserId);
-
-                        // add the test point assignment to the list
-                        assignmentsToAdd.Add(newAssignment);
+                            // add the test point assignment to the list
+                            assignmentsToAdd.Add(newAssignment);
+                        }
+                        catch (Exception)
+                        {
+                            Trace.WriteLine("ERROR: User no longer exists");
+                        }
+                        
                     }
                     else
                     {
